@@ -16,7 +16,6 @@ function UpdatePrompt() {
   const updatePrompt  = async (e) => {
     e.preventDefault();
     setSubmitting(true);
-    if (!promptId) return alert('prompt not found');
         try {
             const response=await fetch(`/api/prompt/${promptId}`,{
                 method:'PATCH',
