@@ -16,6 +16,7 @@ function UpdatePrompt() {
   const updatePrompt  = async (e) => {
     e.preventDefault();
     setSubmitting(true);
+    if (!promptId) return alert('prompt not found');
         try {
             const response=await fetch(`/api/prompt/${promptId}`,{
                 method:'PATCH',
@@ -40,7 +41,7 @@ function UpdatePrompt() {
       const data=await res.json();
       setPost({prompt:data.prompt,tag:data.tag})
   }
-  getPromptDetails()
+  if(promptId)getPromptDetails()
   },[promptId])
 
   return (<Form type="Edit" setPost={setPost} post={post} submitting={submitting} handleSubmit={updatePrompt } />);
