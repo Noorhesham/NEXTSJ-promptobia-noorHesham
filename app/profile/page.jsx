@@ -4,6 +4,7 @@ import { useState,useEffect } from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import Profile from "@components/Profile";
+export const  dynamic='force-dynamic'
 
 function MyProfile() {
     const {data:session}=useSession();
