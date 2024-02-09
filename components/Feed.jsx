@@ -43,6 +43,7 @@ function Feed() {
     const fetchPosts=async ()=>{
       const res=await fetch('/api/prompt');
       const data=await res.json();
+      console.log(data)
       setPosts(data)
     }
     fetchPosts();
@@ -53,7 +54,7 @@ function Feed() {
     const searchResult = filterPrompts(tagName);
     setSearchedResults(searchResult);
   }
-  
+
   return <section className="feed">
     <form className=" relative w-full flex-center">
       <input type="text" placeholder="Search for a tag or a username"
