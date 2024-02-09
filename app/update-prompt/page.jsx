@@ -16,8 +16,8 @@ const UpdatePrompt = () => {
   useEffect(()=>{
   const getPromptDetails=async()=>{
       const res=await fetch(`/api/prompt/${promptId}`);
-      const {prompt,tag}=await res.json();
-      setPost({prompt:prompt,tag:tag})
+      const data=await res.json();
+      setPost({prompt:data.prompt,tag:data.tag})
   }
   getPromptDetails()
   },[promptId])
