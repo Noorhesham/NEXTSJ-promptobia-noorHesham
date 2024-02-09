@@ -9,7 +9,7 @@ function UpdatePrompt() {
   const router=useRouter();
   const searchParams=useSearchParams();
   const promptId=searchParams.get('id');
-
+  if(!promptId) return;
   const [submitting, setSubmitting] = useState(false);
   const [post, setPost] = useState({ prompt: '', tag: '' });
 
