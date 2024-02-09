@@ -28,7 +28,7 @@ function PromptCard({post,handleTagClick,handleEdit,handleDelete}) {
         </div>
       <div onClick={handleCopy} className="copy_btn">
         <Image src={copy===post.prompt?'/assets/icons/tick.svg':'/assets/icons/copy.svg'}
-        width={20} height={20}/>
+        width={20} height={20} alt="image"/>
       </div>
       </div>
       <p className=" my-4 font-satoshi text-sm text-gray-700">{post.prompt}</p>
