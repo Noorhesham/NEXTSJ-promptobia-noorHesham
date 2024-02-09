@@ -9,7 +9,7 @@ export const connectToDB=async ()=>{
         return;
     }
     try {
-        await mongoose.connect('mongodb+srv://noorboi:promptnoor55@cluster0.r58tukl.mongodb.net/?retryWrites=true&w=majority',{
+        await mongoose.connect(process.env.MONGO_URI,{
             dbName:'share_prompt',
             useNewUrlParser:true,
             useUnifiedTopology:true,
