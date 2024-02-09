@@ -2,13 +2,7 @@
 
 import { useRouter,useSearchParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
-// import Form from '@components/Form';
-import dynamic from 'next/dynamic';
-
-const Form = dynamic(
-	() => import('@components/Form'),
-	{ ssr: false }
-);
+import Form from '@components/Form';
 
 const UpdatePrompt = () => {
 
@@ -28,7 +22,7 @@ const UpdatePrompt = () => {
   getPromptDetails()
   },[promptId])
 
-  const EditPrompt = async (e) => {
+  const updatePrompt  = async (e) => {
     e.preventDefault();
     setSubmitting(true);
     if (!promptId) return alert('prompt not found');
@@ -50,7 +44,7 @@ const UpdatePrompt = () => {
         }
       };
 
-  return <Form type="Edit" setPost={setPost} post={post} submitting={submitting} handleSubmit={EditPrompt} />;
+  return (<Form type="Edit" setPost={setPost} post={post} submitting={submitting} handleSubmit={updatePrompt } />);
 }
 
 export default UpdatePrompt;
