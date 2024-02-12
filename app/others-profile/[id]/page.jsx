@@ -2,7 +2,7 @@
 
 import Profile from '@components/Profile';
 import { useParams, useSearchParams,  } from 'next/navigation'
-import { useEffect, useState } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 
 function userProfile() {
   const{id}=useParams();
@@ -19,7 +19,9 @@ function userProfile() {
     if(id) fetchPosts();
   },[])
   return (
-    <Profile name={name} desc={`This is ${name} profile page`} data={posts}  />
+    <Suspense fallback="loading .....">
+      <Profile name={name} desc={`This is ${name} profile page`} data={posts}  />
+    </Suspense>
   )
 }
 
