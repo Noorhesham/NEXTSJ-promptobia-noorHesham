@@ -9,6 +9,7 @@ export const connectToDB=async ()=>{
         return;
     }
     try {
+        // i pass uri name to the connect after importing moongose 
         await mongoose.connect(process.env.MONGO_URI,{
             dbName:'share_prompt',
             useNewUrlParser:true,
